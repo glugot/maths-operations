@@ -1,22 +1,41 @@
 #!/usr/bin/env python3
 
-import sys
+import argparse
 
 from operations import add
 
 
 def main():
-    if len(sys.argv) != 3:
-        print('Usage: python maths.py <integer 1> <integer>')
-    else:
-        try:
-            number1 = int(sys.argv[1])
-            number2 = int(sys.argv[2])
-        except ValueError:
-            print('Enter two valid integers.')
-            sys.exit(1)
+    parser = argparse.ArgumentParser(
+        description="Perform simple mathematical operations on 2 integers."
+    )
+    parser.add_argument(
+        'operation',
+        choices=['add', 'subtract', 'multiply', 'divide'],
+        help='The mathematical operation to perform.'
+    )
+    parser.add_argument(
+        'number1',
+        type=int,
+        help="The first operand"
+    )
+    parser.add_argument(
+        'number2',
+        type=int,
+        help="The second operand"
+    )
 
-        print(add(number1, number2))
+    args = parser.parse_args()
+
+    if args.operation == 'add':
+        result = add(args.number1, args.number2)
+    else:
+        raise NotImplementedError(
+            'The {} operation has not been implemented yet.'.format(
+                args.operation
+            )
+        )
+    print(result)
 
 
 if __name__ == '__main__':
