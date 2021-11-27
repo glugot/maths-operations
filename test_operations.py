@@ -5,7 +5,7 @@ implemented in operations.py
 
 import unittest
 
-from operations import add, subtract
+from operations import add, subtract, multiply
 
 
 class TestOperations(unittest.TestCase):
@@ -24,4 +24,11 @@ class TestOperations(unittest.TestCase):
         Test that the subtract() function can do subtraction.
         """
         result = subtract(3, 1)
+        self.assertEqual(result, 2)
+
+    def test_add_integers(self):
+        """
+        Test that the multiply() function can add two integers.
+        """
+        result = multiply(1, 2)
         self.assertEqual(result, 2)
