@@ -15,3 +15,9 @@ def subtract(number1, number2):
     Subtract 'number2' from 'number1' and return the result.
     """
     return number1 - number2
+
+def divide(number1, number2):
+    """
+    Divide 'number1' by 'number2' and return the result.
+    """
+    return number1 / number2
