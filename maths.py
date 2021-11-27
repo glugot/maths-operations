@@ -2,7 +2,7 @@
 
 import argparse
 
-from operations import add, subtract, divide
+from operations import add, subtract, divide, multiply
 
 
 def main():
@@ -33,7 +33,8 @@ def main():
         result = subtract(args.number1, args.number2)
     elif args.operation == 'divide':
         result = divide(args.number1, args.number2)
-
+    elif args.operation == 'multiply':
+        result = multiply(args.number1, args.number2)
     else:
         raise NotImplementedError(
             'The {} operation has not been implemented yet.'.format(

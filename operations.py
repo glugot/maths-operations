@@ -21,3 +21,10 @@ def divide(number1, number2):
     Divide 'number1' by 'number2' and return the result.
     """
     return number1 / number2
+
+
+def multiply(number1, number2):
+    """
+    Multiply 'number1' and 'number2' and return the result.
+    """
+    return number1 * number2
